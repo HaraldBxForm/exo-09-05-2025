@@ -11,7 +11,7 @@ const addButton = document.querySelector(`.add-button`);
 // Display
 const displayedDépenses = document.querySelector(`.displayed-list`);
 const totalAmmount = document.querySelector(`.total-ammount`);
-const displayedCategory = document.querySelector(`.displayed-category`)
+const displayedCategory = document.querySelectorAll(`.displayed-category`)
 
 // ==============================
 // 🧠 Variables globales
@@ -50,10 +50,30 @@ function addElementToDépenses() {
 
 }
 
+// Get Emoji
+function getEmoji(category) {
+    if (category === "Logement") {
+        return `🏡`;
+    }
+    if (category === "Essence") {
+        return `⛽`;
+    }
+    if (category === "Alimentation") {
+        return `🍕`;
+    }
+    if (category === "Divertissement") {
+        return `🍿`;
+    }
+}
+
 // Afficher les dépenses
 function displayDépenses() {
     // Display reset
-    displayedDépenses.innerHTML = ``;
+    
+    displayedCategory.forEach(div => {
+        div.innerHTML = '';
+    });
+
     totalAmmount.innerHTML = ``;
 
     let total = 0;
@@ -65,17 +85,17 @@ function displayDépenses() {
         // <div class="delete-button" data-index="${index}">❌</div>
         // </div>`
 
-        const catogoryContainer = document.querySelector(`.Essence`);
+        const catogoryContainer = document.querySelector(`[data-category="Essence"]`);
         if (catogoryContainer) {
             catogoryContainer.innerHTML += `<div class="displayed-list-element">
-            ${Dépense[1]}€ ${Dépense[0]} ${Dépense[2]} ${formatedDate}
+            ${Dépense[1]}€ ${Dépense[0]} ${getEmoji(Dépense[2])} ${formatedDate}
             <div class="delete-button" data-index="${index}">❌</div>
             </div>`
         }
 
         console.log(`${Dépense[2]}`);
         
-        console.log(document.querySelector(`.Essence`));
+        console.log(document.querySelector(`[data-category="Essence"]`));
         
 
         // Afficher le total
