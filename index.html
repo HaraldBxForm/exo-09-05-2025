@@ -4,6 +4,11 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Dépenses | Harald</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Jersey+15&display=swap" rel="stylesheet">
+
     <link rel="stylesheet" href="./styles/styles.min.css">
     <script src="scripts/main.js" defer></script>
 </head>
@@ -13,17 +18,27 @@
         <h1>💰 Gestion des dépenses 💰</h1>
 
         <h2>Description</h2>
-        <input type="text">
+        <input type="text" class="input-text">
 
         <h2>Montant</h2>
-        <input type="number" name="" id="">
+        <input type="number" name="" id="" class="input-number">
 
         <h2>Catégorie</h2>
-        <select name="" id="">
-            <option value="">Logement</option>
-            <option value="">Essence</option>
-            <option value="">Loyer</option>
+        <select name="input-select" id="" class="input-select">
+            <option value disabled selected>Choisissez la catégorie</option>
+            <option value="Logement">Logement</option>
+            <option value="Essence">Essence</option>
+            <option value="Alimentation">Alimentation</option>
+            <option value="Divertissement">Divertissement</option>
         </select>
+
+        <button class="add-button">Ajouter</button>
+
+        <h2>Dépenses</h2>
+        <div class="displayed-list"></div>
+
+        <h2>Total</h2>
+        <div class="total-ammount"></div>
     </div>
     
 </body>

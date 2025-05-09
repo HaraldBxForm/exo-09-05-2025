@@ -1,0 +1,40 @@
+body {
+    background-color: #1f1f1f;
+    color: white;
+}
+
+.main-wrapper {
+    margin: 3rem auto;
+    width: 80%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
+}
+
+input, select {
+    border-radius: 15px;
+    padding: 0.5rem 2rem;
+    width: 20%;
+    text-align: center;
+    border: none;
+}
+
+.add-button {
+    background-color: #e50914;
+    text-transform: uppercase;
+    color: white;
+    border-radius: 15px;
+    padding: 0.5rem 2rem;
+    width: 20%;
+    text-align: center;
+    border: none;
+}
+
+// Displayed List
+.displayed-list-element {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
