@@ -11,6 +11,7 @@ const addButton = document.querySelector(`.add-button`);
 // Display
 const displayedDépenses = document.querySelector(`.displayed-list`);
 const totalAmmount = document.querySelector(`.total-ammount`);
+const displayedCategory = document.querySelector(`.displayed-category`)
 
 // ==============================
 // 🧠 Variables globales
@@ -21,6 +22,9 @@ const Dépenses = [];
 
 // Total
 let total = 0;
+
+// Date du jour formatée
+const formatedDate = new Date().toLocaleDateString('fr-FR');
 
 // ==============================
 // 🎊 Fonctionnalités
@@ -35,7 +39,7 @@ function addElementToDépenses() {
     }
 
     // Ajout des dépenses à la liste "Dépenses"
-    Dépenses.push([inputDescription.value, inputNumber.value, inputCategory.value]);
+    Dépenses.push([inputDescription.value, inputNumber.value, inputCategory.value, formatedDate]);
 
     console.log(Dépenses);
     
@@ -54,11 +58,25 @@ function displayDépenses() {
 
     let total = 0;
     Dépenses.forEach((Dépense, index) => {
+
         // Afficher la liste des dépenses
-        displayedDépenses.innerHTML += `<div class="displayed-list-element">
-        ${Dépense[1]}€ ${Dépense[0]} ${Dépense[2]}
-        <div class="delete-button" data-index="${index}">❌</div>
-        </div>`
+        // displayedDépenses.innerHTML += `<div class="displayed-list-element">
+        // ${Dépense[1]}€ ${Dépense[0]} ${Dépense[2]} ${formatedDate}
+        // <div class="delete-button" data-index="${index}">❌</div>
+        // </div>`
+
+        const catogoryContainer = document.querySelector(`.${Dépense[2]}`);
+        if (catogoryContainer) {
+            catogoryContainer.innerHTML += `<div class="displayed-list-element">
+            ${Dépense[1]}€ ${Dépense[0]} ${Dépense[2]} ${formatedDate}
+            <div class="delete-button" data-index="${index}">❌</div>
+            </div>`
+        }
+
+        console.log(`${Dépense[2]}`);
+        
+        console.log(document.querySelector(`.${Dépense[2]}`));
+        
 
         // Afficher le total
         total += Number(Dépense[1]);

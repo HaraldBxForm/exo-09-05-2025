@@ -21,7 +21,7 @@
         <input type="text" class="input-text">
 
         <h2>Montant</h2>
-        <input type="number" name="" id="" class="input-number">
+        <input type="number" min="0" name="" id="" class="input-number">
 
         <h2>Catégorie</h2>
         <select name="input-select" id="" class="input-select">
@@ -35,7 +35,12 @@
         <button class="add-button">Ajouter</button>
 
         <h2>Dépenses</h2>
-        <div class="displayed-list"></div>
+        <div class="displayed-list">
+            <div class="displayed-category Logement"></div>
+            <div class="displayed-category Essence"></div>
+            <div class="displayed-category Alimentation"></div>
+            <div class="displayed-category Divertissement"></div>
+        </div>
 
         <h2>Total</h2>
         <div class="total-ammount"></div>
