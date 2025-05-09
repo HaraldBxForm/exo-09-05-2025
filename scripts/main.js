@@ -65,7 +65,7 @@ function displayDépenses() {
         // <div class="delete-button" data-index="${index}">❌</div>
         // </div>`
 
-        const catogoryContainer = document.querySelector(`.${Dépense[2]}`);
+        const catogoryContainer = document.querySelector(`.Essence`);
         if (catogoryContainer) {
             catogoryContainer.innerHTML += `<div class="displayed-list-element">
             ${Dépense[1]}€ ${Dépense[0]} ${Dépense[2]} ${formatedDate}
@@ -75,7 +75,7 @@ function displayDépenses() {
 
         console.log(`${Dépense[2]}`);
         
-        console.log(document.querySelector(`.${Dépense[2]}`));
+        console.log(document.querySelector(`.Essence`));
         
 
         // Afficher le total
